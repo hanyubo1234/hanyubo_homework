@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人兴趣</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f5f5f5;
+            color: #333333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Homework</h1>
+    </header>
+    <div class="container">
+        <h2>自我介绍</h2>
+        <p>大家好！我是韩玉博，欢迎来到我的个人兴趣网页。在这里我将为你介绍一些有关我的一些事情。</p>
+
+        <h2>我的兴趣爱好</h2>
+        <ul>
+            <li><strong>阅读：</strong>我喜欢阅读小说、历史书籍和科学杂志。</li>
+            <li><strong>旅行：</strong>我热爱旅行，喜欢探索新地方的美食和文化。</li>
+            <li><strong>摄影：</strong>我喜欢用相机捕捉美丽的瞬间，尤其是人文自然风景。</li>
+            <li><strong>运动：</strong>我经常进行跑步和健身。</li>
+            <li><strong>音乐：</strong>我喜欢听各种类型的音乐，尤其是民谣。</li>
+         </ul>
+        <div class="clock" id="clock">加载时钟中...</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // 初始化时钟显示
+    </script>
+</body>
+</html>
